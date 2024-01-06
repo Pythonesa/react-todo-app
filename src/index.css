@@ -1,0 +1,23 @@
+:root{
+  --primary-color: #FFCE0B;
+  --secondary-color: #AC00BD;
+  --text-color: #ADAFB2;
+  --bg-color: #093F41;
+
+}
+
+body{
+  background-color: var(--bg-color);
+  color: var(--text-color);
+}
+
+.container{
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 100vh;
+}
+
+.logo{
+  width: 6rem;
+}
