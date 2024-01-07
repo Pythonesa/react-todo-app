@@ -1,23 +1,100 @@
+@import url('https://fonts.cdnfonts.com/css/salsa');
+
 :root{
   --primary-color: #FFCE0B;
   --secondary-color: #AC00BD;
   --text-color: #ADAFB2;
   --bg-color: #093F41;
-
 }
 
 body{
   background-color: var(--bg-color);
   color: var(--text-color);
+  font-family: 'Salsa', sans-serif;
 }
 
 .container{
   display: flex;
+  flex-direction: column;
   justify-content: center;
   align-items: center;
   height: 100vh;
 }
 
+.secondary-container{
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  background-color: #AC00BD;
+  padding: 1rem;
+  padding-top: 0rem;
+  margin-top: 2rem;
+  color: var(--primary-color);
+  width: 80%;
+  border-radius: 5px;
+  box-shadow: 0.4rem 0.4rem black;
+
+}
+
 .logo{
-  width: 6rem;
+  width: 10rem;
+}
+
+.control {
+  margin-bottom: 1rem;
+  display: flex;
+  width: 100%;
+  font-size: 1.5rem;
+  font-family: 'Salsa', sans-serif;
+}
+
+form {
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+}
+
+label {
+  margin-left: 1rem;
+  color: whitesmoke;
+  font-weight: 600;
+}
+
+textarea {
+  height: 5rem;
+  resize: none;
+}
+
+.alert-danger{
+  color: red;
+  background-color: var(--primary-color);
+  padding: 0.5rem;
+  margin-bottom: 1rem;
+  border-radius: 5px;
+  border: 1px solid;
+  border-color: red;
+  font-size: 1.5rem;
+  box-shadow: 0 0 0.5rem red;
+}
+
+.button {
+  background-color: var(--primary-color);
+  padding: 0.5rem;
+  border-radius: 5px;
+  border-color: var(--secondary-color);
+  color: var(--secondary-color);
+  cursor: pointer;
+  width: auto;
+  box-shadow: 0.05rem 0.05rem black;
+}
+
+h2{
+  font-size: 2.5rem;
+  font-variant: small-caps;
+  margin:0.8rem;
+  color: var(--primary-color);
+  text-shadow: 0.2rem 0.2rem black;
 }
