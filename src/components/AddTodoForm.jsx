@@ -19,8 +19,7 @@ export default function AddToDoForm({addTodo}) {
             Swal.fire({
                 icon: 'error',
                 iconColor : '#FFCE0B',
-                title: 'Oops...',
-                text: 'Todos los campos son obligatorios',
+                title: 'Todos los campos son obligatorios',
                 background: '#AC00BD',
                 color: '#FFCE0B',
                 confirmButtonColor: '#093F41'
