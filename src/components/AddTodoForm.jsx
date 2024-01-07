@@ -42,6 +42,12 @@ export default function AddToDoForm({addTodo}) {
             showConfirmButton: false,
             timer: 2000
         })
+        setTodo({
+            todoName: '',
+            todoDescription: '',
+            todoState: 'Pendiente',
+            todoPriority: true
+        });
     }
 
 
