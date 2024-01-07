@@ -1,7 +1,8 @@
 import {useState} from 'react'
-import Swal from 'sweetalert2';
+import Swal from 'sweetalert2'
+import PropTypes from 'prop-types'
 
-export default function AddToDoForm() {
+export default function AddToDoForm({addTodo}) {
     const [todo, setTodo] = useState({
         todoName: '',
         todoDescription: '',
@@ -26,6 +27,21 @@ export default function AddToDoForm() {
             })
             return
         }
+
+        addTodo({
+            id: Date.now(),
+            name: todoName,
+            description: todoDescription,
+            state: todoState === "Terminada",
+            priority: todoPriority
+        })
+        Swal.fire({
+            icon: 'success',
+            title: '¡Tarea añadida!',
+            background: '#AC00BD',
+            color: '#FFCE0B',
+            confirmButtonColor: '#093F41'
+        })
     }
 
 
@@ -80,4 +96,8 @@ export default function AddToDoForm() {
             </form>
         </div>
     )
+}
+
+AddToDoForm.propTypes = {
+    addTodo: PropTypes.func
 }
