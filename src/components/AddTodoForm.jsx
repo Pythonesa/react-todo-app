@@ -39,7 +39,8 @@ export default function AddToDoForm({addTodo}) {
             title: '¡Tarea añadida!',
             background: '#AC00BD',
             color: '#FFCE0B',
-            confirmButtonColor: '#093F41'
+            showConfirmButton: false,
+            timer: 2000
         })
     }
 
