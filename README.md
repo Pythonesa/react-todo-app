@@ -12,5 +12,6 @@ Es la primera aplicación que estoy creando para practicar React.
 
 ## Tecnologías utilizadas
 
-- React
+- ReactJS
 - Vite
+- Alertas con SweetAlert2 `pnpm install sweetalert2` [Documentación](https://sweetalert2.github.io/#usage)

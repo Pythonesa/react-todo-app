@@ -1,4 +1,5 @@
 import {useState} from 'react'
+import Swal from 'sweetalert2';
 
 export default function AddToDoForm() {
     const [todo, setTodo] = useState({
@@ -8,15 +9,23 @@ export default function AddToDoForm() {
         todoPriority: true
     })
 
-    const [error, setError] = useState(false)
 
     const {todoName, todoDescription, todoState, todoPriority} = todo
-    const ShowError = () => <div className="alert-danger">Todos los campos son obligatorios</div>
 
     const handleSubmit = (event) => {
         event.preventDefault();
-        if (!todoName.trim() || !todoDescription.trim() || !todoState.trim()) return setError(true)
-        setError(false)
+        if (!todoName.trim() || !todoDescription.trim()) {
+            Swal.fire({
+                icon: 'error',
+                iconColor : '#FFCE0B',
+                title: 'Oops...',
+                text: 'Todos los campos son obligatorios',
+                background: '#AC00BD',
+                color: '#FFCE0B',
+                confirmButtonColor: '#093F41'
+            })
+            return
+        }
     }
 
 
@@ -31,7 +40,6 @@ export default function AddToDoForm() {
     return (
         <div className="secondary-container">
             <h2>Añadir nueva tarea</h2>
-            {error && <ShowError />}
             <form onSubmit={handleSubmit}>
                 <input 
                     className="control"
