@@ -35,11 +35,23 @@ export default function App() {
     }))
   }
 
+  const orderTodosByPriority = (todos) => {
+    return todos.sort((a, b) => {
+      if (a.priority && !b.priority) {
+        return -1
+      }
+      if (!a.priority && b.priority) {
+        return 1
+      }
+      return 0
+    })
+  }
+
   return (
     <div className="container">
       <img src="/src/assets/images/to-do-list.png" alt="ToDo List Logo" className="logo"/>
       <AddToDoForm addTodo={addTodo}/>
-      <Todos todos={todos} deleteTodo={deleteTodo} toggleTodoState={toggleTodoState}/>
+      <Todos todos={orderTodosByPriority(todos)} deleteTodo={deleteTodo} toggleTodoState={toggleTodoState}/>
     </div>
   )
 }
