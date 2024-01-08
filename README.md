@@ -4,6 +4,8 @@ Esta es una aplicación ToDo construida con React.
 
 Es la primera aplicación que estoy creando para practicar React.
 
+La app se encuentra desplegada en Netlify: https://reactnecitatodo.netlify.app/
+
 ## Características
 
 - Añadir nuevos elementos ToDo.
