@@ -1,17 +1,17 @@
+import { useEffect, useState } from "react"
 import AddToDoForm from "./components/AddTodoForm"
 import SuccessAlert from "./components/SuccessAlert"
 import Todos from "./components/Todos"
-import { useState } from "react"
 
-const initialStateTodos = [
-  {id: 1, name: "Todo 1", description: "Todo 1 description", state: true, priority: false},
-  {id: 2, name: "Todo 2", description: "Todo 2 description", state: false, priority: false},
-  {id: 3, name: "Todo 3", description: "Todo 3 description", state: true, priority: true},
-]
+const initialStateTodos = JSON.parse(localStorage.getItem('todos')) || []
 
 export default function App() {
 
   const [todos, setTodos] = useState(initialStateTodos)
+
+  useEffect(() => {
+    localStorage.setItem('todos', JSON.stringify(todos))
+  }, [todos])
 
   const addTodo = (todo) => {
     setTodos([...todos, todo])
