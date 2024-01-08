@@ -1,6 +1,7 @@
 import {useState} from 'react'
 import Swal from 'sweetalert2'
 import PropTypes from 'prop-types'
+import SuccessAlert from './SuccessAlert'
 
 export default function AddToDoForm({addTodo}) {
     const [todo, setTodo] = useState({
@@ -34,14 +35,7 @@ export default function AddToDoForm({addTodo}) {
             state: todoState === "Terminada",
             priority: todoPriority
         })
-        Swal.fire({
-            icon: 'success',
-            title: '¡Tarea añadida!',
-            background: '#AC00BD',
-            color: '#FFCE0B',
-            showConfirmButton: false,
-            timer: 2000
-        })
+        SuccessAlert({title: "¡Tarea añadida!"})
         setTodo({
             todoName: '',
             todoDescription: '',

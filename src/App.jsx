@@ -1,4 +1,5 @@
 import AddToDoForm from "./components/AddTodoForm"
+import SuccessAlert from "./components/SuccessAlert"
 import Todos from "./components/Todos"
 import { useState } from "react"
 
@@ -16,11 +17,16 @@ export default function App() {
     setTodos([...todos, todo])
   }
 
+  const deleteTodo = (id) => {
+    setTodos(todos.filter(todo => todo.id !== id))
+    SuccessAlert({title: "¡Tarea eliminada!"})
+  }
+
   return (
     <div className="container">
       <img src="/src/assets/images/to-do-list.png" alt="ToDo List Logo" className="logo"/>
       <AddToDoForm addTodo={addTodo}/>
-      <Todos todos={todos}/>
+      <Todos todos={todos} deleteTodo={deleteTodo}/>
     </div>
   )
 }
