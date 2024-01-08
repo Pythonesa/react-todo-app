@@ -22,11 +22,24 @@ export default function App() {
     SuccessAlert({title: "¡Tarea eliminada!"})
   }
 
+  const toggleTodoState = (id) => {
+    setTodos(todos.map(todo => {
+      if (todo.id === id) {
+        todo.state ? SuccessAlert({title: "Estado cambiado a 'Pendiente'"}) : SuccessAlert({title: "Estado cambiado a 'Terminada'"})
+        return {
+          ...todo,
+          state: !todo.state
+        }
+      }
+      return todo
+    }))
+  }
+
   return (
     <div className="container">
       <img src="/src/assets/images/to-do-list.png" alt="ToDo List Logo" className="logo"/>
       <AddToDoForm addTodo={addTodo}/>
-      <Todos todos={todos} deleteTodo={deleteTodo}/>
+      <Todos todos={todos} deleteTodo={deleteTodo} toggleTodoState={toggleTodoState}/>
     </div>
   )
 }
