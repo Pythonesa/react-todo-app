@@ -2,6 +2,7 @@ import { useEffect, useState } from "react"
 import AddToDoForm from "./components/AddTodoForm"
 import SuccessAlert from "./components/SuccessAlert"
 import Todos from "./components/Todos"
+import Logo from "./assets/images/to-do-list.png"
 
 const initialStateTodos = JSON.parse(localStorage.getItem('todos')) || []
 
@@ -49,7 +50,7 @@ export default function App() {
 
   return (
     <div className="container">
-      <img src="/src/assets/images/to-do-list.png" alt="ToDo List Logo" className="logo"/>
+      <img src={Logo} alt="ToDo List Logo" className="logo"/>
       <AddToDoForm addTodo={addTodo}/>
       <Todos todos={orderTodosByPriority(todos)} deleteTodo={deleteTodo} toggleTodoState={toggleTodoState}/>
     </div>
